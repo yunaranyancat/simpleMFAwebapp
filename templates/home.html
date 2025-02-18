@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Welcome to Hacker Auth</h1>
+    {% if current_user.is_authenticated %}
+        <p>Hello, {{ current_user.username }}!</p>
+    {% else %}
+        <p>Please login or register to access the system.</p>
+    {% endif %}
+{% endblock %}

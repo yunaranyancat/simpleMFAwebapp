@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Setup MFA</h2>
+    {% if secret %}
+        <p>Scan the QR code below with your Google Authenticator app:</p>
+        <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
+        <p>Or enter this secret key manually: {{ secret }}</p>
+        <p>Once you've added the MFA to your app, you can now use it for login.</p>
+    {% else %}
+        <p>Click the button below to generate your MFA secret and QR code.</p>
+        <form method="POST" action="">
+            <input type="submit" value="Generate MFA">
+        </form>
+    {% endif %}
+{% endblock %}
