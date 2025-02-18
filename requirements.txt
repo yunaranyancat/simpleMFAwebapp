@@ -1,0 +1,4 @@
+flask
+pyotp
+flask-session
+gunicorn
